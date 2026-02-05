@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "agent": "node scripts/run-agent.js",
+    "agent:bootstrap:moltbook": "node scripts/run-agent.js bootstrap.moltbook"
   },
   "keywords": [],
   "author": "",

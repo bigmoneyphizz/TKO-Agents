@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "agents": [
+    {
+      "id": "bootstrap.moltbook",
+      "name": "Moltbook Bootstrap Fetcher",
+      "folder": "agents/bootstrap",
+      "entry": "moltbook_bootstrap_agent.js",
+      "description": "Fetches Moltbook skill.md (when resolvable) and saves it to output.",
+      "inputs": [],
+      "outputs": ["agents/bootstrap/output/moltbook_skill.md"],
+      "tools": ["http.fetch"],
+      "permissions": ["fs.write:agents/**/output"],
+      "status": "active"
+    }
+  ]
+}
