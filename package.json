@@ -10,7 +10,9 @@
     "core": "node agents/core/index.js",
     "core:list": "node agents/core/index.js list",
     "core:validate": "node agents/core/index.js validate",
-    "core:create": "node agents/core/index.js create"
+    "core:create": "node agents/core/index.js create",
+    "cf:dev": "npx wrangler dev cloudflare/agent-gateway/src/index.js --config cloudflare/agent-gateway/wrangler.toml",
+    "cf:deploy": "npx wrangler deploy --config cloudflare/agent-gateway/wrangler.toml"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "eslint": "^9.39.2",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "wrangler": "^4.63.0"
   }
 }
