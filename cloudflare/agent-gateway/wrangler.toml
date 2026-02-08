@@ -1,0 +1,9 @@
+name = "tko-agent-gateway"
+main = "src/index.js"
+compatibility_date = "2026-02-01"
+
+[vars]
+TKO_GATEWAY_TOKEN = "FTG-TKO-10noARASHI2026"
+
+[ai]
+binding = "AI"
