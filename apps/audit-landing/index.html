@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TKO Instant AI Audit</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Instant AI Audit</h1>
+      <p>Answer 5 questions. Get problems, quick wins, and a recommended tier.</p>
+    </header>
+
+    <form id="auditForm" class="card">
+      <label>
+        Business type
+        <input name="businessType" required placeholder="e.g., HVAC, salon, electrician" />
+      </label>
+
+      <label>
+        Do you have a website?
+        <select name="hasWebsite" required>
+          <option value="" selected disabled>Select…</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label>
+        Monthly leads (approx.)
+        <input name="monthlyLeads" type="number" min="0" required placeholder="e.g., 20" />
+      </label>
+
+      <label>
+        Current booking method
+        <input name="bookingMethod" required placeholder="e.g., phone calls, text, email" />
+      </label>
+
+      <label>
+        Biggest pain right now
+        <input name="biggestPain" required placeholder="e.g., missed follow-ups" />
+      </label>
+
+      <button id="submitBtn" type="submit">Run Audit</button>
+      <p id="status" class="status" aria-live="polite"></p>
+    </form>
+
+    <section id="results" class="card hidden">
+      <h2>Results</h2>
+
+      <div class="grid">
+        <div>
+          <h3>Problems</h3>
+          <ul id="problems"></ul>
+        </div>
+        <div>
+          <h3>Quick Wins</h3>
+          <ul id="quickWins"></ul>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p><strong>Recommended Tier:</strong> <span id="tier"></span></p>
+        <p><strong>Next Action:</strong> <span id="nextAction"></span></p>
+        <div class="ctaBtns">
+          <a id="bookLink" class="btn secondary" href="#" target="_blank" rel="noopener">Book a Call</a>
+          <a id="buyLink" class="btn" href="#" target="_blank" rel="noopener">Start Now</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>© ShugoTKO LLC</small>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+
