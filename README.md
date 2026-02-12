@@ -1,10 +1,13 @@
-# TKO-Agents
+
+# Tengoku Sōzō — TKO Agents Runtime
+
 ## Overview
 
-**Tengoku Sōzō** is a production-grade AI agent runtime built by **ShugoTKO LLC**.
+**Tengoku Sōzō** is a production-grade AI agent runtime built by **ShugoTKO LLC**.  
 It is designed to execute **autonomous, monetizable AI agents** securely, deterministically, and at scale.
 
-This is not a chatbot system.
+This is not a chatbot system.  
+>>>>>>> 024dc0a (Sync local changes before rebase)
 It is an **agent execution platform**.
 
 The core philosophy is:
