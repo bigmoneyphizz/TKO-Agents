@@ -32,7 +32,27 @@ function fillList(el, items) {
   el.innerHTML = "";
   (items || []).forEach((x) => {
     const li = document.createElement("li");
-    li.textContent = String(x);
+
+    // Supports either string items OR objects like { description, impact }
+    if (x && typeof x === "object") {
+      const desc = x.description ? String(x.description) : JSON.stringify(x);
+      const impact = x.impact ? String(x.impact) : "";
+
+      const strong = document.createElement("strong");
+      strong.textContent = desc;
+
+      li.appendChild(strong);
+
+      if (impact) {
+        const small = document.createElement("div");
+        small.className = "muted";
+        small.textContent = impact;
+        li.appendChild(small);
+      }
+    } else {
+      li.textContent = String(x);
+    }
+
     el.appendChild(li);
   });
 }
