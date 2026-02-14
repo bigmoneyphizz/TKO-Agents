@@ -103,14 +103,20 @@ form.addEventListener("submit", async (e) => {
     const text = await res.text();
     if (!res.ok) throw new Error(text || `HTTP ${res.status}`);
 
-    const json = JSON.parse(text);
+const json = JSON.parse(text);
 
-    fillList(problems, json.problems);
-    fillList(quickWins, json.quickWins);
-    tier.textContent = json.recommendedTier || "—";
-    nextAction.textContent = json.nextAction || "—";
+if (!json.ok) {
+  throw new Error(json.error || "audit_failed");
+}
 
-    pickCta(json.recommendedTier);
+const out = json.data;
+
+fillList(problems, out.problems);
+fillList(quickWins, out.quickWins);
+tier.textContent = out.recommendedTier || "—";
+nextAction.textContent = out.nextAction || "—";
+
+pickCta(out.recommendedTier);
 
     results.classList.remove("hidden");
     setStatus("Done.");
